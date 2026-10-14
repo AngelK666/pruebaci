@@ -39,6 +39,15 @@ public class CuentaBancariaTest {
         assertEquals(800, origen.getSaldo());
         assertEquals(700, destino.getSaldo());
     }
+    @Test
+    void aplicarInteresValido() {
+        CuentaBancaria cuenta =
+                new CuentaBancaria(1000);
+
+        cuenta.aplicarInteres(5);
+
+        assertEquals(1050, cuenta.getSaldo());
+    }
 
 
 

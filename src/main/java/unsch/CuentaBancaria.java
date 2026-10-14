@@ -26,4 +26,9 @@ public class CuentaBancaria {
             destino.depositar(monto);
         }
     }
+    public void aplicarInteres(double porcentaje) {
+        if (porcentaje > 0) {
+            saldo += saldo * porcentaje / 100;
+        }
+    }
 }
