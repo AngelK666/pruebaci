@@ -18,4 +18,17 @@ public class CuentaBancaria {
     public double getSaldo() {
         return saldo;
     }
+    public void transferir(
+            CuentaBancaria destino,
+            double monto) {
+        if (monto > 0 && monto <= saldo) {
+            this.saldo -= monto;
+            destino.depositar(monto);
+        }
+    }
+    public void aplicarInteres(double porcentaje) {
+        if (porcentaje > 0) {
+            saldo += saldo * porcentaje / 100;
+        }
+    }
 }
