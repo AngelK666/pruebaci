@@ -48,6 +48,25 @@ public class CuentaBancariaTest {
 
         assertEquals(1050, cuenta.getSaldo());
     }
+    @Test
+    void aplicarInteresCero() {
+        CuentaBancaria cuenta =
+                new CuentaBancaria(1000);
+
+        cuenta.aplicarInteres(0);
+
+        assertEquals(1000, cuenta.getSaldo());
+    }
+    @Test
+    void aplicarInteresNegativo() {
+        CuentaBancaria cuenta =
+                new CuentaBancaria(1000);
+
+        cuenta.aplicarInteres(-10);
+
+        assertEquals(1000, cuenta.getSaldo());
+    }
+
 
 
 
