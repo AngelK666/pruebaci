@@ -8,6 +8,7 @@ public class CuentaBancariaTest {
         CuentaBancaria cuenta =
                 new CuentaBancaria(1000);
         cuenta.retirar(200);
+        System.out.println("Saldo después del retiro: " + cuenta.getSaldo());
         assertEquals(800, cuenta.getSaldo());
     }
     @Test
@@ -28,6 +29,17 @@ public class CuentaBancariaTest {
         cuenta.depositar(500);
         assertEquals(1500, cuenta.getSaldo());
     }
+    @Test
+    void transferirDinero() {
+        CuentaBancaria origen =
+                new CuentaBancaria(1000);
+        CuentaBancaria destino =
+                new CuentaBancaria(500);
+        origen.transferir(destino, 200);
+        assertEquals(800, origen.getSaldo());
+        assertEquals(700, destino.getSaldo());
+    }
+
 
 
 
